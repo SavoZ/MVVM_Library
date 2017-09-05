@@ -6,8 +6,9 @@
 
     <Grid Margin="0,16,0,0">
         <DockPanel Margin="10,10,10,193">
-            <TextBox DockPanel.Dock="Top" Margin="0,0,0,10" Name="txtFilter" TextChanged="txtFilter_TextChanged" />
-            <ListView Name="lvUsers">
+            <TextBox DockPanel.Dock="Top" Margin="0,0,0,10" Text="{Binding Path=Filter, UpdateSourceTrigger=PropertyChanged}" />
+            <ListView ItemsSource="{Binding Path=FilteredNames, UpdateSourceTrigger=PropertyChanged}"
+                      SelectedItem="{Binding Customer, UpdateSourceTrigger=PropertyChanged}">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding customerName}" />
@@ -16,7 +17,7 @@
                 </ListView.View>
             </ListView>
         </DockPanel>
-        <Button x:Name="btnCustomer" Content="Customer" HorizontalAlignment="Left" Margin="25,271,0,0" VerticalAlignment="Top" Width="76" />
+        <Button Command="{Binding BookCustomer,UpdateSourceTrigger=PropertyChanged}" Content="Customer" HorizontalAlignment="Left" Margin="25,271,0,0" VerticalAlignment="Top" Width="76" />
 
     </Grid>
 

@@ -74,7 +74,56 @@ namespace WpfLibrary.ViewModels
         }
 
 
+        private ICommand allCustomer;
+        public ICommand AllCustomer
+        {
+            get
+            {
+                if (allCustomer == null)
+                {
+                    allCustomer = new RelayCommand(parm => AllCustomerExecute());
+                }
+                return allCustomer;
+            }
+        }
 
+        private void AllCustomerExecute()
+        {
+            try
+            {
+                AllCustomer customer = new AllCustomer();
+                customer.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+
+            }
+
+
+
+        }
+
+
+        private ICommand addCustomer;
+        public ICommand AddCustomer
+        {
+            get
+            {
+                if (addCustomer == null)
+                {
+                    addCustomer = new RelayCommand(parm => AddCustomerExecute());
+                }
+                return addCustomer;
+            }
+        }
+
+        private void AddCustomerExecute()
+        {
+            AddCustomer newCustomer = new AddCustomer();
+            newCustomer.ShowDialog();
+        }
 
     }
 }

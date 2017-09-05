@@ -1,0 +1,20 @@
+﻿<Controls:MetroWindow x:Class="WpfLibrary.Customer"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Customer" Height="300" Width="300">
+    <Grid>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="48,19,0,0" VerticalAlignment="Top"/>
+        <Label Content="Address" HorizontalAlignment="Left" Margin="48,96,0,0" VerticalAlignment="Top"/>
+        <Label Content="Date" HorizontalAlignment="Left" Margin="48,133,0,0" VerticalAlignment="Top"/>
+        <Label Content="Book" HorizontalAlignment="Left" Margin="48,58,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding Customer.customerName}" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="125,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Text="{Binding Customer.name}" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="125,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Text="{Binding Customer.address}" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="125,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Text="{Binding Customer.date,StringFormat=dd/MM/yyyy}" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="125,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Command="{Binding ReturnBook,UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding ReturnB,UpdateSourceTrigger=PropertyChanged}" Content="Return book" HorizontalAlignment="Left" Margin="30,179,0,0" VerticalAlignment="Top" Width="86" />
+        <Button Command="{Binding RentBook,UpdateSourceTrigger=PropertyChanged}" Visibility="{Binding RentB,UpdateSourceTrigger=PropertyChanged}" Content="Rent book" HorizontalAlignment="Left" Margin="170,179,0,0" VerticalAlignment="Top" Width="86" />
+        <Button Command="{Binding Cancel, UpdateSourceTrigger=PropertyChanged}" Content="Cancel" HorizontalAlignment="Left" Margin="170,226,0,0" VerticalAlignment="Top" Width="86" />
+
+    </Grid>
+</Controls:MetroWindow>

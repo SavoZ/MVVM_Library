@@ -43,14 +43,6 @@ namespace WpfLibrary.ViewModels
             }
 
         }
-
-        private bool isUpadate;
-        public bool IsUpdate
-        {
-            get { return isUpadate; }
-            set { isUpadate = value; }
-        }
-
         private bool CanSaveExecute()
         {
             return true;
@@ -60,12 +52,9 @@ namespace WpfLibrary.ViewModels
         {
             try
             {
-               
-                    AddNewBook(book);
-                    isUpadate = true;
-                    addBook.Close();
-                
-
+                AddNewBook(book);
+                isUpadate = true;
+                addBook.Close();
             }
             catch (Exception ex)
             {
@@ -76,6 +65,33 @@ namespace WpfLibrary.ViewModels
             return book;
 
         }
+
+        private ICommand cancel;
+        public ICommand Cancel
+        {
+            get
+            {
+                if (cancel == null)
+                {
+                    cancel = new RelayCommand(parm => CancelExecute());
+                }
+                return cancel;
+            }
+        }
+
+        private void CancelExecute()
+        {
+            addBook.Close();
+        }
+
+        private bool isUpadate;
+        public bool IsUpdate
+        {
+            get { return isUpadate; }
+            set { isUpadate = value; }
+        }
+
+        
 
         private vwBook AddNewBook(vwBook book)
         {

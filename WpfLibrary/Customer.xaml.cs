@@ -17,16 +17,20 @@ using WpfLibrary.ViewModels;
 namespace WpfLibrary
 {
     /// <summary>
-    /// Interaction logic for AddBook.xaml
+    /// Interaction logic for Customer.xaml
     /// </summary>
-    public partial class AddBook : MetroWindow
+    public partial class Customer : MetroWindow
     {
-        private AddBook addBook;
 
-        public AddBook()
+        public Customer()
         {
             InitializeComponent();
-            this.DataContext = new AddBookViewModel(this);
+        }
+
+        public Customer(vwCustomer customer)
+        {
+            InitializeComponent();
+            this.DataContext = new CustomerViewModel(this, customer);
         }
 
     }

@@ -10,24 +10,21 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using MahApps.Metro.Controls;
 using WpfLibrary.ViewModels;
+using MahApps.Metro.Controls;
 
 
 namespace WpfLibrary
 {
     /// <summary>
-    /// Interaction logic for AddBook.xaml
+    /// Interaction logic for AddCustomer.xaml
     /// </summary>
-    public partial class AddBook : MetroWindow
+    public partial class AddCustomer : MetroWindow
     {
-        private AddBook addBook;
-
-        public AddBook()
+        public AddCustomer()
         {
             InitializeComponent();
-            this.DataContext = new AddBookViewModel(this);
+            this.DataContext = new AddCustomerViewModel(this);
         }
-
     }
 }

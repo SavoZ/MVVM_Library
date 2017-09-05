@@ -29,7 +29,7 @@
         </Grid>
         <Button Grid.Row="1" Name="btnAddBook" Content="Add Book" Command="{Binding AddBook, UpdateSourceTrigger=PropertyChanged}"
                  FontWeight="Bold" HorizontalAlignment="Left" Width="100"  Grid.Column="1" Height="20" Background="#FF0ECF0E" />
-        <Button x:Name="btnCustomer" Content="Add Customer" Grid.Column="1" HorizontalAlignment="Left" Margin="136,1,-58,0" Grid.Row="1" VerticalAlignment="Top" Width="101" />
-        <Button Content="List Customers" Grid.Column="1" HorizontalAlignment="Left" Margin="274,0,-183,0" Grid.Row="1" VerticalAlignment="Top" Width="92" />
+        <Button Content="Add Customer" Grid.Column="1" Command="{Binding AddCustomer,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="136,1,-58,0" Grid.Row="1" VerticalAlignment="Top" Width="101" />
+        <Button Content="List Customers" Grid.Column="1"  Command="{Binding AllCustomer, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="274,0,-183,0" Grid.Row="1" VerticalAlignment="Top" Width="92" />
     </Grid>
 </Controls:MetroWindow>
